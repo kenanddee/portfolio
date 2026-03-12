@@ -1,0 +1,1100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-header {
+    padding: 1px 5%;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+}
+
+
+.navbar {
+    border: 1px solid rgba(230, 207, 167, 0.2); 
+}
+
+
+/* Body */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #3a4b41;
+  color: white;
+}
+
+/* Navigation */
+
+nav {
+  width: 100%;
+  padding: 1rem 5%;
+  background: rgb(58, 75, 65);
+  border-bottom: 1px solid #e6cfa7;
+  backdrop-filter: blur;
+  margin-bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #e6cfa7;
+  letter-spacing: 1px;
+}
+
+a.logo {
+  color: #e6cfa7;
+  text-decoration: none;
+}
+
+/* Navigation Links */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  position: relative;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #e6cfa7;   
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Navigation Link Hover Effect */
+
+.nav-links li a:hover {
+  color: #6b8f71;
+}
+
+/* Active Navigation Link */
+
+.nav-links li a.active {
+  color: #6b8f71;
+}
+
+/* Navbar Toggle */
+
+.navbar-toggle {
+  background: transparent;
+  display: none;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #e6cfa7;
+  transition: 0.3s ease-in-out;
+}
+
+/* Media Queries  */
+
+@media (max-width: 880px){
+
+    .navbar {
+        backdrop-filter: blur(12px);
+    }
+
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem !important;
+    position: absolute;
+    height: 100vh;
+    width: 250px;
+    top: 0;
+    right: 0;
+    padding: 5rem 1.5rem;
+    box-shadow:none;
+    background: rgba(58, 75, 65, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-left: 1px solid rgba(230, 207, 167, 0.2);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .navbar-toggle {
+    display: block;
+    z-index: 999;
+  }
+
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/*  Media query for even smaller phone */
+
+@media (max-width : 480px) {
+  .nav {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+  }
+
+  .nav-links li a {
+    font-size: 2 rem;
+    padding: 3px 15px;
+  }
+}
+
+/* Hero dhan tanaaa section LOL */
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  position: relative;
+  color:#e6cfa7;
+
+  padding-top: 120px;
+
+  padding-left: 10%;
+  padding-right: 5%;
+}
+
+.hero-section h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e07a5f;
+  margin: 0;
+  letter-spacing: 2px;
+  margin-bottom: none;
+}
+
+.hero-section h2 {
+  font-family: 'Abril Fatface', serif;  
+  font-size: clamp(3rem,8vw, 5.5rem);
+  font-weight: 700;
+  margin-top: 1.5rem;     
+  color: #e6cfa7;
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+/* Line intro */
+
+.intro-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Line */
+
+.line {
+  width: 35px;
+  height: 1px;
+  background-color: #e6cfa7;
+}
+
+/* Side Social Links */
+
+.side-socials {
+    position: absolute;
+    right: 40px; /* Distance from the right edge */
+    bottom: 0;   /* Starts from the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;   /* Space between links */
+    z-index: 100;
+}
+
+.side-socials a {
+    writing-mode: vertical-rl;
+    text-decoration: none;
+    color: #e6cfa7;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.side-socials a:hover {
+    color: #e07a5f;
+    transform: translateY(-5px);
+}
+
+/* Decorative arcs */
+
+.bg-arcs-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none; /* Crucial: clicks pass through to your links */
+    z-index: 0; /* Keeps them behind your content */
+    overflow: hidden;
+}
+
+.arc {
+    position: absolute;
+    border: 1px solid rgba(230, 207, 167, 0.15);
+    border-radius: 50%;
+    /* Centered vertically on the right edge */
+    top: 50%;
+    right: 0;
+    opacity: 0;
+    transform: translate(50%, -50%) scale(0.8);
+    animation: arcFadeIn 1.8s ease-out forwards;
+}
+
+/* Specific sizes & delays for the 5 independent circles */
+.arc:nth-child(1) { width: 300px; height: 300px; animation-delay: 0.3s; }
+.arc:nth-child(2) { width: 500px; height: 500px; animation-delay: 0.5s; }
+.arc:nth-child(3) { width: 700px; height: 700px; animation-delay: 0.7s; }
+.arc:nth-child(4) { width: 900px; height: 900px; animation-delay: 0.9s; }
+.arc:nth-child(5) { width: 1100px; height: 1100px; animation-delay: 1.1s; }
+
+@keyframes arcFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(50%, -50%) scale(1);
+    }
+}
+
+/* The long line at the bottom of the links */
+.vertical-line {
+    width: 1px;
+    height: 100px;
+    background-color: rgba(230, 207, 167, 0.3);
+    margin-top: 10px;
+}
+
+/* Hide on mobile */
+@media (max-width: 1100px) {
+    .side-socials {
+        display: none;
+    }
+}
+
+/* Animation instructions */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+/* Animation for contents */
+.intro-wrapper {
+    opacity: 0; /* Start hidden */
+    animation: fadeInUp 1s ease forwards; /* 'forwards' keeps it visible after it ends */
+}
+
+.hero-section h2 {
+    opacity: 0; /* Start hidden */
+    animation: fadeInUp 1s ease forwards; /* 'forwards' keeps it visible after it ends */
+    animation-delay: 0.5s; /* Delay for the main heading */
+}
+
+.side-socials {
+  opacity: 0; /* Start hidden */
+  animation: fadeInUp 1s ease forwards; /* 'forwards' keeps it visible after it ends */
+  animation-delay: 0.8s; /* Delay for the side social links */
+}
+
+/* Animation instruction for navbar */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%); 
+    }
+    to {
+        transform: translateY(0);  
+    }
+}
+
+/* animate header */
+.main-header {
+    animation: slideDown 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* About section */
+.about-section {
+    min-height: 100vh;
+    padding: 150px 10%;
+}
+
+.about-text {
+    margin-top: 40px;
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(230, 207, 167, 0.8);
+}
+
+/* navbar glass like lol */
+
+.navbar {
+    background: rgba(58, 75, 65, 0.8); 
+    
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    
+    border: 1px solid rgba(230, 207, 167, 0.2); 
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 5%;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.about-image {
+  flex: 0 0 60%;
+  z-index: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.about-text-box {
+  flex: 0 0 40%;
+  z-index: 2;
+}
+
+.intro-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.line {
+  width: 40px;
+  height: 1px;
+  background-color: #e6cfa7;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(230, 207, 167, 0.8);
+  margin-bottom: 50px;
+}
+
+.btn {
+    display: block;
+    width: 100%; /* Makes it wide like the screenshot */
+    padding: 25px 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.03); /* Very subtle dark fill */
+    border: 1px solid rgba(230, 207, 167, 0.2);
+    color: #e6cfa7;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+}
+
+.btn:hover {
+    background-color: #e6cfa7;
+    color: #3a4b41; /* Swaps colors on hover */
+}
+
+/* About Expertise section*/
+.expertise-section {
+    padding: 120px 0;
+    background-color: #1a1a1a; /* Match your site's dark background */
+    color: #fff;
+}
+
+.expertise-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.section-label, .column-title {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: #e6cfa7; /* Your accent color */
+    display: block;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.expertise-display {
+    font-family: 'Abril Fatface', serif; /* The bold serif font */
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 100px;
+    color: #fff;
+    max-width: 900px;
+}
+
+.resume-grid {
+    display: flex;
+    gap: 80px;
+}
+
+.resume-column {
+    flex: 1;
+    position: relative;
+    border-left: 1px solid rgba(230, 207, 167, 0.2); /* The vertical line */
+    padding-left: 40px;
+}
+
+.resume-item {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+/* The Gold Dot sitting on the line */
+.dot {
+    position: absolute;
+    left: -44.5px; /* Aligns exactly on the 1px border */
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #e6cfa7;
+    border-radius: 50%;
+}
+
+.resume-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.resume-item h4 {
+    font-size: 0.85rem;
+    color: #e6cfa7;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.resume-item p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.date {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .resume-grid { flex-direction: column; }
+    .expertise-display { font-size: 2.2rem; }
+}
+
+/* --- Works Section Base --- */
+.work-section {
+    padding: 120px 0; 
+    color: #e6cfa7;
+    width: 100%;
+}
+
+.work-container {
+    max-width: 90%; /* Keeping it spacious and big like we discussed */
+    margin: 0 auto;
+}
+
+.works-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 4rem; /* Big, stunning heading */
+    margin-bottom: 80px;
+    letter-spacing: -1px;
+}
+
+/* --- The Grid --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns like Luther's */
+    column-gap: 80px; /* Spacious gap between columns */
+    row-gap: 0; /* Handled by project-item padding */
+}
+
+/* --- Project Item Row --- */
+.project-item {
+    display: flex;
+    align-items: center;
+    padding: 40px 30px 40px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.4s ease;
+}
+
+/* Image Setup (1:1 Ratio) */
+.project-img {
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    margin-right: 40px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5 ease;
+}
+
+/* The White Overlay (Invisible by default) */
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* That "whiteish" look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden */
+    transition: opacity 0.4s ease;
+}
+
+/* The Plus Sign */
+.plus-icon {
+    color: #000; /* Or #fff depending on your preference */
+    font-size: 2.5rem;
+    font-weight: 300;
+    transform: translateY(10px); /* Starts slightly lower */
+    transition: transform 0.4s ease;
+}
+
+/* Text Info */
+.project-info .category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.project-info h3 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0;
+    transition: color 0.4s ease;
+}
+
+/* The Arrow Reaction */
+.project-arrow {
+    position: absolute;
+    right: 0;
+    font-size: 1.8rem;
+    color: #e6cfa7; /* That gold accent */
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- HOVER REACTIONS --- */
+
+
+.project-item:hover .img-overlay {
+    opacity: 1; /* Show the white wash */
+}
+.project-item:hover .plus-icon {
+    transform: translateY(0); /* Move the plus sign up to center */
+}
+/* 2. Title Color Change */
+.project-item:hover h3 {
+    color: #e6cfa7;
+}
+
+/* 3. Arrow Slide-in */
+.project-item:hover .project-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 4. Border Highlight */
+.project-item:hover {
+    border-bottom: 1px solid rgba(230, 207, 167, 0.5);
+}
+
+/* Modal Base */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Dark backdrop */
+}
+
+.modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    margin: 50px auto;
+    background: #fff;
+    animation: fadeInUp 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal Container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9999;
+}
+
+/* Dark Background Overlay */
+.modal-overlay {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: rgba(18, 18, 18, 0.95);
+}
+
+/* The White Card */
+.modal-card {
+    position: relative;
+    background: #fff;
+    width: 90%;
+    max-width: 750px;
+    margin: 60px auto;
+    animation: slideUp 0.4s ease-out;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Content Layout */
+.modal-img-container { position: relative; }
+#modal-img { width: 100%; display: block; }
+
+.project-link-btn {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.modal-text-content {
+    padding: 50px;
+    color: #333;
+}
+
+#modal-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+#modal-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Close 'X' Button */
+.close-modal {
+    position: absolute;
+    top: -45px; right: 0;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 100px; /* Space away from projects */
+    padding-top: 100px;
+    border-top: 1px solid rgba(230, 207, 167, 0.1);
+}
+
+.testimonial-item {
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+.author-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.author-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* The Greyish Effect */
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.5s ease;
+}
+
+.author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+    transition: color 0.4s ease;
+}
+
+.author-title {
+    font-size: 0.75rem;
+    color: rgba(230, 207, 167, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+/* --- HOVER EFFECTS --- */
+
+/* 1. Image goes from grey to normal */
+.testimonial-item:hover .author-img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 2. Name colors up to your gold accent */
+.testimonial-item:hover .author-name {
+    color: #e6cfa7;
+}
+
+/* 3. Subtle lift animation for the whole block */
+.testimonial-item:hover {
+    transform: translateY(-5px);
+}
+
+/* say hello section */
+.contact-section {
+    padding: 120px 0 60px;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    /* This adds the space between the line and your text */
+    padding-top: 120px; 
+    
+    /* This adds space above the line itself */
+    margin-top: 100px; 
+
+}
+
+.contact-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.section-label {
+    font-family: 'Montserrat', sans-serif;
+    color: #e6cfa7;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.contact-display {
+    font-family: 'Abril Fatface', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 80px;
+    max-width: 900px;
+}
+
+/* Update your contact-display for that massive, bold look */
+.contact-display {
+    font-family: 'Abril Fatface', serif;
+    /* Lowered the middle and max values for desktop */
+    font-size: clamp(2.5rem, 5vw, 4.2rem); 
+    line-height: 1.1;
+    margin-bottom: 80px;
+    /* This keeps the text from stretching too wide */
+    max-width: 850px; 
+    color: #e6cfa7;
+}
+
+/* Fix the Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Give more room to the 'Reach Me' section */
+    gap: 40px;
+    border-top: 1px solid rgba(230, 207, 167, 0.1); /* The line above the info */
+    padding-top: 60px;
+    align-items: start;
+}
+
+/* Ensure the columns don't stack until mobile */
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.column-title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #fff;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.contact-link {
+    font-size: 1.1rem;
+    color: rgba(230, 207, 167, 0.7);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    color: #fff;
+}
+.social-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.social-links-grid a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.social-links-grid a:hover {
+    color: #e6cfa7;
+}
+
+/* The Button */
+.btn-say-hello {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #e6cfa7;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.btn-say-hello:hover {
+    background-color: #e6cfa7;
+    color: #111;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+}
+
+.scroll-top {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    width: 60px;
+    height: 70px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.scroll-top:hover {
+    background-color: #e6cfa7;
+    color: #111;
+    border-color: #e6cfa7;
+    transform: translateY(-5px);
+}
+
+/* Customizing the Mailtoui Modal Colors */
+:root {
+    --mailtoui-primary: #e6cfa7; /* Your gold color */
+    --mailtoui-primary-dark: #d4bc92;
+    --mailtoui-background: #111111;
+    --mailtoui-text: #ffffff;
+}
+
+/* Optional: Make the modal match your aesthetic more closely */
+#mailtoui-modal-content {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0px; /* Luther style uses sharp edges */
+}
+
+/* Mobile Styles for Project Items */
+@media screen and (max-width: 768px) {
+    .project-item {
+        flex-direction: column; /* Stacks image and text vertically */
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .project-img {
+        width: 100%; /* Makes the image take full width on mobile */
+        margin-bottom: 15px;
+    }
+
+    .project-info {
+        padding-left: 0; /* Removes any side padding so text aligns left */
+    }
+
+    .project-info h3 {
+        font-size: 1.8rem; /* Adjusts the size so it fits mobile screens */
+    }
+
+    .category {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+/* To be seen in the phone */
+@media screen and (max-width: 768px) {
+    /* 1. Stack the About container vertically */
+    .about-container {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center; /* Centers text for a cleaner mobile look */
+        padding: 40px 20px;
+    }
+
+    /* 2. Make the image large and centered */
+    .about-image {
+        width: 100%;
+        max-width: 400px; /* Prevents the photo from getting too huge */
+        margin-bottom: 30px; /* Adds space before the text starts */
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px; /* Optional: keeps your photo's rounded edges */
+    }
+
+    /* 3. Ensure the text box takes up full width */
+    .about-text-box {
+        width: 100%;
+        padding-left: 0; /* Removes the desktop side-padding */
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 20px 0;
+    }
+}
+
+/* Apply this to your sections below the Hero */
+.about-section, .expertise-section, .work-section, .contact-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+/* This class will be added by JavaScript when you scroll */
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
